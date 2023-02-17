@@ -17,7 +17,7 @@ import javax.naming.spi.DirStateFactory;
  */
 public class FileHandler {
 
-    private static String PATH
+    public static String PATH
             = "C:\\Users\\csomo\\Documents\\NetBeansProjects\\"
             + "VizsgaPelda\\MVizsga0826\\Vizsga_Pelda\\src\\persistance\\planeTrips";
     private static String DELIMITER = ",";
