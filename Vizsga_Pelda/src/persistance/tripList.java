@@ -22,6 +22,7 @@ public abstract class tripList<E> implements List<E> {
         innerList = new ArrayList();
         listeners = new HashSet<>();
     }
+//<editor-fold defaultstate="collapsed" desc="properties">
 
     @Override
     public boolean contains(Object o) {
@@ -70,4 +71,9 @@ public abstract class tripList<E> implements List<E> {
         return innerList.listIterator(index);
     }
 
+//</editor-fold>
+    @Override
+    public int size() {
+        return innerList.size();
+    }
 }

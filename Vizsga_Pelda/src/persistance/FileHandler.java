@@ -28,8 +28,10 @@ public class FileHandler {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(PATH));
             List<String> row;
-            while (reader.readLine() != null) {
-                row = makerow(reader.readLine());
+            String barmi;
+            while ((barmi = reader.readLine()) != null) {
+
+                row = makerow(barmi);
                 result.add(row);
 
             }
