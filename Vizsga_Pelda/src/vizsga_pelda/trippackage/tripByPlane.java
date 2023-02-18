@@ -11,6 +11,9 @@ public class tripByPlane extends trip {
     private String airportTo;
     private planeClass flyingClass;
 
+    public tripByPlane() {
+    }
+
     public tripByPlane(String airportFrom, String airportTo,
             planeClass flyingClass, String toGo, String passangerName, int price,
             LocalDate tripDate, int numberOfNights) {

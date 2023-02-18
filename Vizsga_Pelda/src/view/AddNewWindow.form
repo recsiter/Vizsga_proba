@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      <Component id="btSave" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lbFlyingClass" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lbPassangerName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbNumberOfNights" alignment="0" pref="98" max="32767" attributes="0"/>
+                                  <Component id="lbPrice" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbAirportTo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbToGo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbAirportFrom" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbTripDate" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPrice" max="32767" attributes="0"/>
+                          <Component id="jNumberOfNigths" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTripDate" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPassangerName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jToGo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jFlyingClass" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jAirportTo" alignment="0" pref="213" max="32767" attributes="0"/>
+                          <Component id="jAirportFrom" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbAirportFrom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jAirportFrom" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbAirportTo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jAirportTo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbFlyingClass" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jFlyingClass" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbToGo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToGo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbPassangerName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPassangerName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbTripDate" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  <Component id="jTripDate" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbNumberOfNights" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jNumberOfNigths" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <Component id="btSave" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbAirportFrom">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AirportFrom"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbFlyingClass">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FlyingClass"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbAirportTo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AirportTo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbToGo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ToGo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbPassangerName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PassangerName"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTripDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="TripDate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbNumberOfNights">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NumberOfNights"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbPrice">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Price"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btSave">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSaveActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jAirportFrom">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jToGo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jFlyingClass">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jPassangerName">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTripDate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jNumberOfNigths">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jPrice">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jAirportTo">
+    </Component>
+  </SubComponents>
+</Form>
