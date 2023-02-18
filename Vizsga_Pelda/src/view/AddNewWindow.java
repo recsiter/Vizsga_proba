@@ -4,6 +4,7 @@ import java.awt.HeadlessException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import persistance.PlaneTripController;
 import vizsga_pelda.trippackage.planeClass;
 import vizsga_pelda.trippackage.tripByPlane;
 
@@ -166,6 +167,8 @@ public class AddNewWindow extends javax.swing.JFrame {
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
         notifyListeners();
         createTripFromData();
+        PlaneTripController ctrl = new PlaneTripController();
+        ctrl.insert(innerPlaneTrip);
         this.dispose();
 
     }//GEN-LAST:event_btSaveActionPerformed

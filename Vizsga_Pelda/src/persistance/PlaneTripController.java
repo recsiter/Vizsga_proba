@@ -81,6 +81,7 @@ public class PlaneTripController implements Controller {
             result.add(planeTrip.getPassangerName());
             result.add(String.valueOf(planeTrip.getPrice()));
             result.add(String.valueOf(planeTrip.getTripDate()));
+            result.add(String.valueOf(planeTrip.getNumberOfNights()));
 
         }
         return result;
@@ -107,7 +108,6 @@ public class PlaneTripController implements Controller {
         int price = Integer.parseInt(list.get(5));
         LocalDate date = LocalDate.parse(list.get(6));
         int numberOfNight = Integer.parseInt(list.get(7));
-
         tripByPlane result = new tripByPlane(airport, airportTo, planeClass1,
                 toGo, passangername, price, date, numberOfNight);
         return result;
