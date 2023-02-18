@@ -50,6 +50,24 @@ public class PlaneTripController implements Controller {
 
     @Override
     public void update(trip trip) {
+        try {
+            List<List<String>> readIn = FileHandler.readIn(PATH);
+            List<tripByPlane> planeList = makeTripsFromStringList(readIn);
+            int instance = planeList.indexOf(trip);
+            int index = 0;
+            if (instance > -1) {
+                while (index < planeList.size() && !trip.equals(planeList.get(
+                        index))) {
+                    index++;
+                }
+                planeList.set(index, (tripByPlane) trip);
+            } else {
+                System.out.println("trip not found");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(PlaneTripController.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -69,7 +87,7 @@ public class PlaneTripController implements Controller {
 
     }
 
-    private List<tripByPlane> makeTripsFromStringList(List<List<String>> readIn) {
+    public List<tripByPlane> makeTripsFromStringList(List<List<String>> readIn) {
         List<tripByPlane> planeTrips = new ArrayList<>();
         for (int i = 0; i < readIn.size(); i++) {
             tripByPlane onetrip = createOnePlaneTrip(readIn.get(i));
