@@ -46,21 +46,24 @@ public class planeTripTableModelAbs extends AbstractTableModel {
             case 4:
                 value = temp.getToGo();
                 break;
+
             case 5:
-                value = temp.getPassangerName();
-                break;
-            case 6:
                 value = String.valueOf(temp.getPrice());
                 break;
-            case 7:
+            case 6:
                 value = String.valueOf(temp.getTripDate());
                 break;
-            case 8:
+            case 7:
                 value = String.valueOf(temp.getNumberOfNights());
                 break;
 
         }
         return value;
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        return columnNames[column];
     }
 
 }
