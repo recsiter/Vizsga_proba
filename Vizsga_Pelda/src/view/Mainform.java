@@ -1,6 +1,7 @@
 package view;
 
 import java.util.List;
+import javax.swing.JFrame;
 import persistance.planeTripHandler;
 import persistance.tripList;
 import vizsga_pelda.trippackage.trip;
@@ -14,6 +15,7 @@ public class Mainform extends javax.swing.JFrame {
 
     planeTripTableModelAbs tblAbs;
     List<tripByPlane> list;
+    PlaneTripEventListener listener;
 
     /**
      * Creates new form Mainform
@@ -23,6 +25,7 @@ public class Mainform extends javax.swing.JFrame {
         list = (List<tripByPlane>) planeTripHandler.getTripByPlanes();
         tblAbs = new planeTripTableModelAbs(list);
         tbPlaneTrip.setModel(tblAbs);
+        listener = new planeTripImplementation();
 
     }
 
@@ -37,6 +40,7 @@ public class Mainform extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         tbPlaneTrip = new javax.swing.JTable();
+        btAddNew = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,25 +57,60 @@ public class Mainform extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbPlaneTrip);
 
+        btAddNew.setText("Add New");
+        btAddNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAddNewActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGap(272, 272, 272)
+                .addComponent(btAddNew)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btAddNew)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btAddNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddNewActionPerformed
+        AddNewWindow newWindow = new AddNewWindow();
+        newWindow.addListener(listener);
+        newWindow.setVisible(true);
+
+    }//GEN-LAST:event_btAddNewActionPerformed
+
+    private class planeTripImplementation implements PlaneTripEventListener {
+
+        @Override
+        public void add(tripByPlane planeTrip) {
+            list.add(planeTrip);
+            tblAbs.fireTableDataChanged();
+        }
+
+        @Override
+        public void update() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+    }
 
     /**
      * @param args the command line arguments
@@ -114,6 +153,7 @@ public class Mainform extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAddNew;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbPlaneTrip;
     // End of variables declaration//GEN-END:variables

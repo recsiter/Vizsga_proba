@@ -25,6 +25,9 @@ public class trip implements Comparable<trip> {
         this.numberOfNights = numberOfNights;
     }
 
+    public trip() {
+    }
+
 //<editor-fold defaultstate="collapsed" desc="propertitts">
     public String getToGo() {
         return toGo;
