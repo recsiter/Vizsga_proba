@@ -19,6 +19,7 @@ public class Vizsga_Pelda {
                                 2023, 07, 13), 4);
 //        ctrl.insert(trip);
         ctrl.update(trip);
+//        szarakodik a github
     }
 
 }
