@@ -24,41 +24,41 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                      <Component id="btSave" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lbFlyingClass" min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lbFlyingClass" min="-2" pref="98" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lbPassangerName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbNumberOfNights" alignment="0" pref="98" max="32767" attributes="0"/>
-                                  <Component id="lbPrice" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbAirportTo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbToGo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbAirportFrom" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbTripDate" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btSave" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lbPassangerName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbNumberOfNights" alignment="0" pref="98" max="32767" attributes="0"/>
+                              <Component id="lbPrice" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbAirportTo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbToGo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbAirportFrom" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbTripDate" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPrice" max="32767" attributes="0"/>
-                          <Component id="jNumberOfNigths" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTripDate" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPassangerName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jToGo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jFlyingClass" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jAirportTo" alignment="0" pref="213" max="32767" attributes="0"/>
-                          <Component id="jAirportFrom" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jPrice" max="32767" attributes="0"/>
+                  <Component id="jNumberOfNigths" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTripDate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPassangerName" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jToGo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jFlyingClass" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jAirportTo" alignment="0" pref="213" max="32767" attributes="0"/>
+                  <Component id="jAirportFrom" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="btDelete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btCancel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="23" max="32767" attributes="0"/>
@@ -108,9 +108,13 @@
                   <Component id="lbPrice" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jPrice" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="btSave" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="61" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -179,6 +183,19 @@
     <Component class="javax.swing.JTextField" name="jPrice">
     </Component>
     <Component class="javax.swing.JTextField" name="jAirportTo">
+    </Component>
+    <Component class="javax.swing.JButton" name="btDelete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btCancel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCancelActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

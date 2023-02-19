@@ -61,6 +61,8 @@ public class PlaneTripController implements Controller {
                     index++;
                 }
                 planeList.set(index, (tripByPlane) trip);
+                List<List<String>> writeOut = tripListToStringList(planeList);
+                FileHandler.writeOut(writeOut);
             } else {
                 System.out.println("trip not found");
             }

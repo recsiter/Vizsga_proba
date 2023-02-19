@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JFrame;
 import persistance.planeTripHandler;
@@ -55,6 +56,11 @@ public class Mainform extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tbPlaneTrip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbPlaneTripMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tbPlaneTrip);
 
         btAddNew.setText("Add New");
@@ -97,6 +103,16 @@ public class Mainform extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btAddNewActionPerformed
 
+    private void tbPlaneTripMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPlaneTripMouseClicked
+        if (evt.getButton() == MouseEvent.BUTTON1 && evt.getClickCount() > 1) {
+            int index = tbPlaneTrip.getSelectedRow();
+            tripByPlane trip = list.get(index);
+            AddNewWindow newWindow = new AddNewWindow(trip, true);
+            newWindow.addListener(listener);
+            newWindow.setVisible(true);
+        }
+    }//GEN-LAST:event_tbPlaneTripMouseClicked
+
     private class planeTripImplementation implements PlaneTripEventListener {
 
         @Override
@@ -107,7 +123,7 @@ public class Mainform extends javax.swing.JFrame {
 
         @Override
         public void update() {
-            throw new UnsupportedOperationException("Not supported yet.");
+            tblAbs.fireTableDataChanged();
         }
 
     }
