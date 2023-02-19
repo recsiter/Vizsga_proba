@@ -4,6 +4,7 @@ import java.awt.HeadlessException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTextField;
 import persistance.PlaneTripController;
 import vizsga_pelda.trippackage.planeClass;
 import vizsga_pelda.trippackage.tripByPlane;
@@ -16,14 +17,14 @@ public class AddNewWindow extends javax.swing.JFrame {
 
     private List<PlaneTripEventListener> listeners;
     private tripByPlane innerPlaneTrip;
+    private boolean isUpdate;
 
-    public AddNewWindow(String title) throws HeadlessException {
-        super(title);
-        listeners = new ArrayList<>();
-        innerPlaneTrip = new tripByPlane();
-
-    }
-
+//    public AddNewWindow(String title) throws HeadlessException {
+//        super(title);
+//        listeners = new ArrayList<>();
+//        innerPlaneTrip = new tripByPlane();
+//
+//    }
     /**
      * Creates new form addNewWindow
      */
@@ -31,6 +32,15 @@ public class AddNewWindow extends javax.swing.JFrame {
         initComponents();
         listeners = new ArrayList<>();
         innerPlaneTrip = new tripByPlane();
+        isUpdate = false;
+    }
+
+    public AddNewWindow(tripByPlane trip, boolean isUpdate) {
+        initComponents();
+        fillFieldsWithTripDatas(trip);
+        listeners = new ArrayList<>();
+        innerPlaneTrip = new tripByPlane();
+        this.isUpdate = isUpdate;
     }
 
     /**
@@ -59,6 +69,8 @@ public class AddNewWindow extends javax.swing.JFrame {
         jNumberOfNigths = new javax.swing.JTextField();
         jPrice = new javax.swing.JTextField();
         jAirportTo = new javax.swing.JTextField();
+        btDelete = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,40 +97,50 @@ public class AddNewWindow extends javax.swing.JFrame {
             }
         });
 
+        btDelete.setText("Delete");
+
+        btCancel.setText("Cancel");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(btSave))
+                        .addContainerGap()
+                        .addComponent(lbFlyingClass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btSave)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lbPassangerName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbNumberOfNights, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                .addComponent(lbPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbAirportTo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbToGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbAirportFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbTripDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPrice)
+                    .addComponent(jNumberOfNigths)
+                    .addComponent(jTripDate)
+                    .addComponent(jPassangerName)
+                    .addComponent(jToGo)
+                    .addComponent(jFlyingClass)
+                    .addComponent(jAirportTo, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                    .addComponent(jAirportFrom)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbFlyingClass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lbPassangerName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbNumberOfNights, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                    .addComponent(lbPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbAirportTo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbToGo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbAirportFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbTripDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPrice)
-                            .addComponent(jNumberOfNigths)
-                            .addComponent(jTripDate)
-                            .addComponent(jPassangerName)
-                            .addComponent(jToGo)
-                            .addComponent(jFlyingClass)
-                            .addComponent(jAirportTo, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(jAirportFrom))))
+                        .addComponent(btDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btCancel)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -156,30 +178,50 @@ public class AddNewWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPrice)
                     .addComponent(jPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addComponent(btSave)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSave)
+                    .addComponent(btDelete)
+                    .addComponent(btCancel))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
-        notifyListeners();
+
         createTripFromData();
         PlaneTripController ctrl = new PlaneTripController();
-        ctrl.insert(innerPlaneTrip);
+        if (isUpdate) {
+            notifyListenersUpdate();
+            ctrl.update(innerPlaneTrip);
+        } else {
+            notifyListenersAdd();
+            ctrl.insert(innerPlaneTrip);
+        }
+
         this.dispose();
 
     }//GEN-LAST:event_btSaveActionPerformed
+
+    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btCancelActionPerformed
 
     public void addListener(PlaneTripEventListener listener) {
         listeners.add(listener);
     }
 
-    private void notifyListeners() {
+    private void notifyListenersAdd() {
         for (PlaneTripEventListener listener : listeners) {
             listener.add(innerPlaneTrip);
+        }
+    }
+
+    private void notifyListenersUpdate() {
+        for (PlaneTripEventListener listener : listeners) {
+            listener.update();
         }
     }
 
@@ -225,6 +267,8 @@ public class AddNewWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCancel;
+    private javax.swing.JButton btDelete;
     private javax.swing.JButton btSave;
     private javax.swing.JTextField jAirportFrom;
     private javax.swing.JTextField jAirportTo;
@@ -255,6 +299,18 @@ public class AddNewWindow extends javax.swing.JFrame {
         innerPlaneTrip.setPrice(Integer.parseInt(jPrice.getText()));
         innerPlaneTrip.setToGo(jToGo.getText());
         innerPlaneTrip.setTripDate(LocalDate.parse(jTripDate.getText()));
+
+    }
+
+    private void fillFieldsWithTripDatas(tripByPlane trip) {
+        jAirportFrom.setText(trip.getAirportFrom());
+        jAirportTo.setText(trip.getAirportTo());
+        jFlyingClass.setText(String.valueOf(trip.getFlyingClass()));
+        jNumberOfNigths.setText(String.valueOf(trip.getNumberOfNights()));
+        jPassangerName.setText(trip.getPassangerName());
+        jPrice.setText(String.valueOf(trip.getPrice()));
+        jToGo.setText(trip.getToGo());
+        jTripDate.setText(String.valueOf(trip.getTripDate()));
 
     }
 }
